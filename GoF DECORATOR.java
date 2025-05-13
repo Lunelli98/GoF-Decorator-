@@ -1,8 +1,32 @@
+//Linha 12 a 18 classe horario de entrada == mudanca feita pos apresentacao
+//Linha 21 a 29 classe horario de saida == mudanca feita pos apresentacao
+//Mudancas de private class pra public feitas nas linhas 61 e 77 apos a apresentacao
+
 public class Main {
 
     // Interface base
     interface Estacionamento {
         void registrar();
+    }
+
+    // Funcao entrada horario
+
+    static class Estacionamento_entrada implements horarioEntrada {
+            public String horarioEntrada;
+
+            public horarioEntrada(string horarioEntrada){
+                this.horarioEntrada = horarioEntrada;
+            }
+    }
+
+    //Funcao saida horario
+
+    static class Estacionamento_saida implements horarioSaida {
+        public String horariosaida;
+
+        public string horariosaida(string horariosaida){
+            this.horariosaida = horariosaida;
+        }
     }
 
     // Classe base concreta
@@ -35,7 +59,7 @@ public class Main {
 
     // Decorator A - Horário de entrada
     static class DecoratorEntrada extends EstacionamentoDecorator {
-        private String horarioEntrada;
+        public String horarioEntrada;
 
         public DecoratorEntrada(Estacionamento estacionamento, String horarioEntrada) {
             super(estacionamento);
@@ -51,7 +75,7 @@ public class Main {
 
     // Decorator B - Horário de saída
     static class DecoratorSaida extends EstacionamentoDecorator {
-        private String horarioSaida;
+        public String horarioSaida;
 
         public DecoratorSaida(Estacionamento estacionamento, String horarioSaida) {
             super(estacionamento);
@@ -79,4 +103,5 @@ public class Main {
         // Executa tudo
         estacionamento.registrar();
     }
+
 }
